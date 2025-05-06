@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://thumbs.dreamstime.com/b/plastic-pollution-ocean-turtle-eat-plastic-bag-environmental-problem-plastic-pollution-ocean-turtle-eat-plastic-bag-140820370.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 12px;
+        }
+
+        img {
+            max-width: 100%;
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        .info {
+            margin: 10px 0;
+        }
+
+        .back-link {
+            margin-top: 30px;
+            display: block;
+            color: #aaddff;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        h1, h2 {
+            color: #ffffff;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detection Results</h1>
+
+        <!-- Removed file path and detection time -->
+
+        <img src="/{{ image_path }}" alt="Uploaded image">
+
+        {% if detections %}
+            <h2>Detected Objects:</h2>
+            <ul>
+                {% for item in detections %}
+                    <li>
+                        <strong>{{ item.label }}</strong><br>
+                        Confidence: {{ item.confidence }}%
+                        <!-- Bounding Box removed -->
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p><em>No objects detected.</em></p>
+        {% endif %}
+
+        <a class="back-link" href="/">Upload another image</a>
+    </div>
+</body>
+</html>
