@@ -7,6 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1_j2har5oW5-RH2TLQfy01OOeE-fFUqUF
 """
 
+<<<<<<< HEAD
 # from google.colab import files
 
 # # Upload kaggle.json
@@ -19,6 +20,20 @@ Original file is located at
 # !kaggle datasets download -d arnavs19/underwater-plastic-pollution-detection --unzip -p /content/
 
 # !pip install ultralytics
+=======
+from google.colab import files
+
+# Upload kaggle.json
+files.upload()
+
+!mkdir -p ~/.kaggle  # Create a directory for Kaggle API key
+!mv kaggle.json ~/.kaggle/  # Move the file to the correct location
+!chmod 600 ~/.kaggle/kaggle.json  # Set permissions
+
+!kaggle datasets download -d arnavs19/underwater-plastic-pollution-detection --unzip -p /content/
+
+!pip install ultralytics
+>>>>>>> 7b60b402294b014f177eebfe84a73b7b9c3f75e9
 
 import os
 import cv2
@@ -146,7 +161,11 @@ def show_predictions(X_test_feats, y_test, y_pred, image_crops, num_samples=6):
     plt.show()
 
 # ==== 7. Load YOLOv8 Model ====
+<<<<<<< HEAD
 yolo_model = YOLO(r'C:\Users\hanal\Desktop\underwater\models\best.pt')
+=======
+yolo_model = YOLO('/content/best.pt')
+>>>>>>> 7b60b402294b014f177eebfe84a73b7b9c3f75e9
 
 # ==== 8. Main Pipeline ====
 def main():
@@ -223,6 +242,7 @@ if __name__ == "__main__":
 
 """## Testing using unseen data"""
 
+<<<<<<< HEAD
 # test_single_image("/content/test1.jpg")
 
 # test_single_image("/content/test2.jpg")
@@ -232,4 +252,15 @@ if __name__ == "__main__":
 # test_single_image("/content/test4.jpeg")
 
 # test_single_image("/content/test5.jpeg")
+=======
+test_single_image("/content/test1.jpg")
+
+test_single_image("/content/test2.jpg")
+
+test_single_image("/content/test3.jpeg")
+
+test_single_image("/content/test4.jpeg")
+
+test_single_image("/content/test5.jpeg")
+>>>>>>> 7b60b402294b014f177eebfe84a73b7b9c3f75e9
 
