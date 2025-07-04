@@ -1,6 +1,6 @@
 # UnderWater-_plastic_detection #
 
-    This project focuses on detecting plastic waste in underwater environments using a hybrid approach of **YOLOv5 object detection** and **machine learning classifiers** like SVM, KNN, and Random Forest. The aim is to assist environmental research and cleanup initiatives by accurately identifying plastic debris in ocean or riverbed images.
+   This project focuses on detecting plastic waste in underwater environments using a hybrid approach of **YOLOv5 object detection** and **machine learning classifiers** like SVM, KNN, and Random Forest. The aim is to assist environmental research and cleanup initiatives by accurately identifying plastic debris in ocean or riverbed images.
 
 ## Features ##
 
